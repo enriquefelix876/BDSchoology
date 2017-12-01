@@ -17,5 +17,54 @@ public class Usuario {
     private String pass;
     private Genero genero;
     private TipoCuenta tipoCuenta;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public TipoCuenta getTipoCuenta() {
+        return tipoCuenta;
+    }
+
+    public void setTipoCuenta(TipoCuenta tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
+    }
+    
     
 }
