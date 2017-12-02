@@ -47,7 +47,6 @@ public class Principal extends javax.swing.JFrame {
         btnRegistrar.setBorderPainted(false);
         btnRegistrar.setContentAreaFilled(false);
         btnRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRegistrar.setOpaque(false);
         btnRegistrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/bdschoology/recursos/registrar.png"))); // NOI18N
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,13 +98,14 @@ public class Principal extends javax.swing.JFrame {
         
         IniciarSesion login = new IniciarSesion();
         login.setVisible(true);
-        
+        this.setVisible(false);
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         
         RegistrarUsuario ru = new RegistrarUsuario();
         ru.setVisible(true);
+        this.setVisible(false);
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
 

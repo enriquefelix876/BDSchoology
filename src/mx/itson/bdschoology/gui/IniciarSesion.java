@@ -6,13 +6,17 @@
 
 package mx.itson.bdschoology.gui;
 
+
 /**
  *
  * @author enriq_000
  */
 public class IniciarSesion extends javax.swing.JFrame {
 
+    
     /** Creates new form IniciarSesion */
+    
+    Principal mps = new Principal();
     public IniciarSesion() {
         
         initComponents();
@@ -39,7 +43,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         btnLogIn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Iniciar Sesión");
 
         jPanel1.setBackground(new java.awt.Color(60, 60, 60));
@@ -152,7 +156,10 @@ public class IniciarSesion extends javax.swing.JFrame {
 
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
 
-    
+        PrincipalProfesor pp = new PrincipalProfesor();
+        pp.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_btnLogInActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

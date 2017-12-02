@@ -6,6 +6,7 @@
 package mx.itson.bdschoology.gui;
 
 import java.awt.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -128,6 +129,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         btnRegistrar.setContentAreaFilled(false);
         btnRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRegistrar.setOpaque(true);
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRegistroLayout = new javax.swing.GroupLayout(panelRegistro);
         panelRegistro.setLayout(panelRegistroLayout);
@@ -245,6 +251,20 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         txtRegistro.setText("Registro de Estudiante");
         
     }//GEN-LAST:event_btnEstudianteActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        
+        if(check.isSelected()){
+        PrincipalProfesor pp = new PrincipalProfesor();
+        pp.setVisible(true);
+        this.setVisible(false);
+        
+        }else{
+        
+            JOptionPane.showMessageDialog(null, "Debe aceptar los terminos y "
+                    + "condiciones.");
+        }   
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEstudiante;
