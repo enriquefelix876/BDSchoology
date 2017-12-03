@@ -11,5 +11,5 @@ package mx.itson.bdschoology.entidades;
  */
 public enum TipoCuenta {
     
-    ALUMNO, PROFESOR
+    ESTUDIANTE, PROFESOR
 }

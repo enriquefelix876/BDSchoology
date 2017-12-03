@@ -19,6 +19,7 @@ public class Asignacion {
     private Date fecha;
     private Date plazoFinal;
     private int id_curso;
+    private int id_profe;
     private Rubrica rubrica;
 
     public int getId() {
@@ -76,5 +77,14 @@ public class Asignacion {
     public void setRubrica(Rubrica rubrica) {
         this.rubrica = rubrica;
     }
+
+    public int getId_profe() {
+        return id_profe;
+    }
+
+    public void setId_profe(int id_profe) {
+        this.id_profe = id_profe;
+    }
  
+    
 }

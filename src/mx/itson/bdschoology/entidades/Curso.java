@@ -15,6 +15,7 @@ public class Curso {
     private String nombre;
     private String descripcion;
     private String periodo;
+    private int id_profesor;
 
     public int getId() {
         return id;
@@ -47,6 +48,12 @@ public class Curso {
     public void setPeriodo(String periodo) {
         this.periodo = periodo;
     }
-    
-    
+
+    public int getId_profesor() {
+        return id_profesor;
+    }
+
+    public void setId_profesor(int id_profesor) {
+        this.id_profesor = id_profesor;
+    }
 }
