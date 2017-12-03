@@ -20,6 +20,14 @@
    <property name="hibernate.connection.password">
       
    </property>
-        
+        <mapping class="mx.itson.bdschoology.entidades.Asignacion"/>
+        <mapping class="mx.itson.bdschoology.entidades.Curso"/>
+        <mapping class="mx.itson.bdschoology.entidades.Entrega"/>
+        <mapping class="mx.itson.bdschoology.entidades.EntregaAsignacion"/>
+        <mapping class="mx.itson.bdschoology.entidades.Genero"/>
+        <mapping class="mx.itson.bdschoology.entidades.Rubrica"/>
+        <mapping class="mx.itson.bdschoology.entidades.TipoCuenta"/>
+        <mapping class="mx.itson.bdschoology.entidades.Usuario"/>
+        <mapping class="mx.itson.bdschoology.entidades.UsuarioCurso"/>
 </session-factory>
 </hibernate-configuration>
