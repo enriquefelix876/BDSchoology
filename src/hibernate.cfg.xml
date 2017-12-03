@@ -12,36 +12,17 @@
    </property>
 
    <property name="hibernate.connection.url">
-<<<<<<< HEAD
       jdbc:mysql://localhost/bdschoology
    </property>
    <property name="hibernate.connection.username">
       root
    </property>
    <property name="hibernate.connection.password">
-       
+      
    </property>
    <mapping class="mx.itson.bdschoology.entidades.Usuario"/>
    <mapping class="mx.itson.bdschoology.entidades.Curso"/>
    <mapping class="mx.itson.bdschoology.entidades.UsuarioCurso"/>
-=======
-      jdbc:mysql://localhost/schoology
-   </property>
-   <property name="hibernate.connection.username">
-      
-   </property>
-   <property name="hibernate.connection.password">
-      
-   </property>
-        <mapping class="mx.itson.bdschoology.entidades.Asignacion"/>
-        <mapping class="mx.itson.bdschoology.entidades.Curso"/>
-        <mapping class="mx.itson.bdschoology.entidades.Entrega"/>
-        <mapping class="mx.itson.bdschoology.entidades.EntregaAsignacion"/>
-        <mapping class="mx.itson.bdschoology.entidades.Genero"/>
-        <mapping class="mx.itson.bdschoology.entidades.Rubrica"/>
-        <mapping class="mx.itson.bdschoology.entidades.TipoCuenta"/>
-        <mapping class="mx.itson.bdschoology.entidades.Usuario"/>
-        <mapping class="mx.itson.bdschoology.entidades.UsuarioCurso"/>
->>>>>>> f8385b24756ffa4d31dcb0d2c92ed5c6c22833c6
+
 </session-factory>
 </hibernate-configuration>

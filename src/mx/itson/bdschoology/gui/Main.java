@@ -25,10 +25,10 @@ public class Main {
         
         Usuario user = new Usuario();
         
-        user.setNombre("Oscar Carmona");
-        user.setCorreo("oscar_carmona@gmail.com");
-        user.setPass("admin");
-        user.setTipoCuenta("Profesor");
+        user.setNombre("Christian Alberto Velasquez Covarrubias");
+        user.setCorreo("chino7.com");
+        user.setPass("12345678");
+        user.setTipoCuenta("Estudiante");
         
         user.guardar(user);
     }
