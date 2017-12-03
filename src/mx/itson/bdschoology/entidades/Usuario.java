@@ -5,22 +5,21 @@
  */ 
 package mx.itson.bdschoology.entidades;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.swing.JOptionPane;
 import mx.itson.bdschoology.gui.IniciarSesion;
+import static mx.itson.bdschoology.gui.IniciarSesion.sesiones;
 import mx.itson.bdschoology.gui.PrincipalEstudiante;
 import mx.itson.bdschoology.gui.PrincipalProfesor;
 import mx.itson.bdschoology.utils.HibernateUtil;
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
-import static mx.itson.bdschoology.gui.IniciarSesion.sesiones;
+
 
 /**
  *
@@ -101,6 +100,7 @@ public class Usuario {
             Transaction transaction = sesion.beginTransaction();
             sesion.save(u);
             transaction.commit();
+            JOptionPane.showMessageDialog(null, "El Usuario se ha registrado con éxito");
         }catch(Exception e){
         
             System.out.println(e.getMessage());

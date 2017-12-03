@@ -18,7 +18,7 @@
       root
    </property>
    <property name="hibernate.connection.password">
-      
+      raiz
    </property>
    <mapping class="mx.itson.bdschoology.entidades.Usuario"/>
    <mapping class="mx.itson.bdschoology.entidades.Curso"/>
