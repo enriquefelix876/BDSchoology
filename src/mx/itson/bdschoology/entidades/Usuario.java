@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.swing.JOptionPane;
 import mx.itson.bdschoology.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -92,6 +93,7 @@ public class Usuario {
             Transaction transaction = sesion.beginTransaction();
             sesion.save(u);
             transaction.commit();
+            JOptionPane.showMessageDialog(null, "El Usuario se ha registrado con éxito");
         }catch(Exception e){
         
             System.out.println(e.getMessage());
