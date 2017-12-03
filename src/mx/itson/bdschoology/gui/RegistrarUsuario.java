@@ -7,6 +7,8 @@ package mx.itson.bdschoology.gui;
 
 import java.awt.List;
 import javax.swing.JOptionPane;
+import mx.itson.bdschoology.entidades.Usuario;
+import static mx.itson.bdschoology.gui.IniciarSesion.sesiones;
 
 /**
  *
@@ -17,6 +19,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     /**
      * Creates new form RegistrarUsuario
      */
+    
+    String tipo="Profesor";
     public RegistrarUsuario() {
         
         initComponents();
@@ -108,8 +112,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         txtPass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtPass.setForeground(new java.awt.Color(255, 255, 255));
         txtPass.setText("Contraseña");
-
-        campoPass.setText("jPassw");
 
         check.setBackground(new java.awt.Color(60, 60, 60));
         check.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -229,27 +231,49 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private void btnInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstructorActionPerformed
 
         txtRegistro.setText("Registro de Instructor");
+        tipo = "Profesor";
         
     }//GEN-LAST:event_btnInstructorActionPerformed
 
     private void btnEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstudianteActionPerformed
         
         txtRegistro.setText("Registro de Estudiante");
-        
+        tipo = "Estudiante";
     }//GEN-LAST:event_btnEstudianteActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         
-        if(check.isSelected()){
-        PrincipalProfesor pp = new PrincipalProfesor();
-        pp.setVisible(true);
-        this.setVisible(false);
+        Usuario user = new Usuario();
         
+        if(!check.isSelected()||campoNombres.getText().isEmpty()||campoApellidos.getText().isEmpty()
+           ||campoEmail.getText().isEmpty()||campoPass.getText().isEmpty()){
+            
+           JOptionPane.showMessageDialog(null, "Asegurese de llenar todos los "
+                    + "campos y aceptar los terminos y condiciones");
         }else{
+        user.setNombre(campoNombres.getText()+" "+campoApellidos.getText());
+        user.setCorreo(campoEmail.getText());
+        user.setPass(campoPass.getText());
+        user.setTipoCuenta(tipo);
         
-            JOptionPane.showMessageDialog(null, "Debe aceptar los terminos y "
-                    + "condiciones.");
-        }   
+        user.guardar(user);
+ 
+        user.setId(user.obtenerTodos().get(user.obtenerTodos().size()-1).getId());
+        sesiones.add(user);
+
+            if (tipo.equals("Estudiante")) {
+                
+                PrincipalEstudiante pe = new PrincipalEstudiante();
+                this.setVisible(false);
+                pe.setVisible(true);
+                
+            }else if(tipo.equals("Profesor")){
+            
+                PrincipalProfesor pp = new PrincipalProfesor();
+                this.setVisible(false);
+                pp.setVisible(true);
+            }
+        }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

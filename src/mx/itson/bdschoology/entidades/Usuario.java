@@ -5,13 +5,22 @@
  */ 
 package mx.itson.bdschoology.entidades;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.swing.JOptionPane;
+import mx.itson.bdschoology.gui.IniciarSesion;
+import mx.itson.bdschoology.gui.PrincipalEstudiante;
+import mx.itson.bdschoology.gui.PrincipalProfesor;
 import mx.itson.bdschoology.utils.HibernateUtil;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+import static mx.itson.bdschoology.gui.IniciarSesion.sesiones;
 
 /**
  *
@@ -96,5 +105,59 @@ public class Usuario {
         
             System.out.println(e.getMessage());
         }
+    }
+    
+    public void iniciarSesion(String correo, String pass){
+        
+        Usuario user = new Usuario();
+        
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+
+        Criteria cr = sesion.createCriteria(Usuario.class);
+        cr.add(Restrictions.eq("correo", correo));
+        cr.add(Restrictions.eq("pass", pass));
+        List results = cr.list();
+        
+        List<Usuario>usuarios = results;
+        String tipo = usuarios.get(0).getTipoCuenta();
+        
+        
+        
+        if (usuarios.isEmpty()) {
+            
+            JOptionPane.showMessageDialog(null, "Error al iniciar sesion");
+        }else{
+
+            if (tipo.equals("Profesor")) {
+            
+            user.setId(usuarios.get(0).getId());
+            user.setNombre(usuarios.get(0).getNombre());
+            user.setCorreo(usuarios.get(0).getCorreo());
+            user.setPass(usuarios.get(0).getPass());
+            user.setTipoCuenta(usuarios.get(0).getTipoCuenta());
+            sesiones.add(user);
+            
+            PrincipalProfesor pp = new PrincipalProfesor();
+            IniciarSesion login = new IniciarSesion();
+            login.setVisible(false);
+            pp.setVisible(true);
+
+            }else if(tipo.equals("Estudiante")){
+            
+            user.setId(usuarios.get(0).getId());
+            user.setNombre(usuarios.get(0).getNombre());
+            user.setCorreo(usuarios.get(0).getCorreo());
+            user.setPass(usuarios.get(0).getPass());
+            user.setTipoCuenta(usuarios.get(0).getTipoCuenta());
+            sesiones.add(user);
+            
+            PrincipalEstudiante pe = new PrincipalEstudiante();
+            IniciarSesion login = new IniciarSesion();
+            login.setVisible(false);
+            pe.setVisible(true);
+            
+            } 
+        }
+  
     }
 }

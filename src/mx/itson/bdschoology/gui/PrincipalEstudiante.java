@@ -5,6 +5,8 @@
  */
 package mx.itson.bdschoology.gui;
 
+import static mx.itson.bdschoology.gui.IniciarSesion.sesiones;
+
 /**
  *
  * @author enriq_000
@@ -15,7 +17,11 @@ public class PrincipalEstudiante extends javax.swing.JFrame {
      * Creates new form PrincipalEstudiante
      */
     public PrincipalEstudiante() {
+        
         initComponents();
+        
+        this.setLocationRelativeTo(null);
+        txtNombre.setText(sesiones.get(sesiones.size()-1).getNombre());
     }
 
     /**
@@ -41,7 +47,7 @@ public class PrincipalEstudiante extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -166,8 +172,8 @@ public class PrincipalEstudiante extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/itson/bdschoology/recursos/default.gif"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Nombre Apellido");
+        txtNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtNombre.setText("Nombre Apellido");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -177,7 +183,7 @@ public class PrincipalEstudiante extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(contenedor)
@@ -192,7 +198,7 @@ public class PrincipalEstudiante extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel2)))
+                        .addComponent(txtNombre)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -223,7 +229,6 @@ public class PrincipalEstudiante extends javax.swing.JFrame {
     private javax.swing.JButton btnSalir;
     private javax.swing.JTabbedPane contenedor;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -235,5 +240,6 @@ public class PrincipalEstudiante extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JLabel txtNombre;
     // End of variables declaration//GEN-END:variables
 }

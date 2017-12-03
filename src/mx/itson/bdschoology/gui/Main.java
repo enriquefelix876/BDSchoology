@@ -25,12 +25,7 @@ public class Main {
         
         Usuario user = new Usuario();
         
-        user.setNombre("Christian Alberto Velasquez Covarrubias");
-        user.setCorreo("chino7.com");
-        user.setPass("12345678");
-        user.setTipoCuenta("Estudiante");
-        
-        user.guardar(user);
+        user.obtenerTodos();
     }
     
 }

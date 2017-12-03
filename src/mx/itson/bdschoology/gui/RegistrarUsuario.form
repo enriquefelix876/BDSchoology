@@ -277,9 +277,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="campoPass">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jPassw"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="check">
               <Properties>
