@@ -47,8 +47,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         txtEmail = new javax.swing.JLabel();
         txtPass = new javax.swing.JLabel();
         campoPass = new javax.swing.JPasswordField();
-        txtInstitucion = new javax.swing.JLabel();
-        campoInstitucion = new javax.swing.JTextField();
         check = new javax.swing.JCheckBox();
         btnRegistrar = new javax.swing.JButton();
 
@@ -113,10 +111,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
         campoPass.setText("jPassw");
 
-        txtInstitucion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtInstitucion.setForeground(new java.awt.Color(255, 255, 255));
-        txtInstitucion.setText("Institución");
-
         check.setBackground(new java.awt.Color(60, 60, 60));
         check.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         check.setForeground(new java.awt.Color(255, 255, 255));
@@ -141,24 +135,24 @@ public class RegistrarUsuario extends javax.swing.JFrame {
             panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRegistroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(check, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
-                        .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombres))
-                        .addGap(18, 18, 18)
-                        .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtApellidos)
-                            .addComponent(campoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtPass, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoPass, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtInstitucion, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoInstitucion, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtRegistro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelRegistroLayout.createSequentialGroup()
+                            .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(campoNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNombres))
+                            .addGap(18, 18, 18)
+                            .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtApellidos)
+                                .addComponent(campoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(campoEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtPass, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(campoPass, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtRegistro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(check, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRegistroLayout.setVerticalGroup(
@@ -182,15 +176,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                 .addComponent(txtPass)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(campoPass, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(txtInstitucion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(campoInstitucion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addComponent(check)
                 .addGap(28, 28, 28)
                 .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -219,7 +209,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     .addComponent(btnEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(panelRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -237,17 +227,13 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInstructorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstructorActionPerformed
-        
-        txtInstitucion.setVisible(true);
-        campoInstitucion.setVisible(true);
+
         txtRegistro.setText("Registro de Instructor");
         
     }//GEN-LAST:event_btnInstructorActionPerformed
 
     private void btnEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstudianteActionPerformed
         
-        txtInstitucion.setVisible(false);
-        campoInstitucion.setVisible(false);
         txtRegistro.setText("Registro de Estudiante");
         
     }//GEN-LAST:event_btnEstudianteActionPerformed
@@ -272,7 +258,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JTextField campoApellidos;
     private javax.swing.JTextField campoEmail;
-    private javax.swing.JTextField campoInstitucion;
     private javax.swing.JTextField campoNombres;
     private javax.swing.JPasswordField campoPass;
     private javax.swing.JCheckBox check;
@@ -281,7 +266,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel panelRegistro;
     private javax.swing.JLabel txtApellidos;
     private javax.swing.JLabel txtEmail;
-    private javax.swing.JLabel txtInstitucion;
     private javax.swing.JLabel txtNombres;
     private javax.swing.JLabel txtPass;
     private javax.swing.JLabel txtRegistro;
