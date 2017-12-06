@@ -6,6 +6,7 @@
 
 package mx.itson.bdschoology.gui;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import mx.itson.bdschoology.entidades.Usuario;
 
@@ -71,6 +72,12 @@ public class IniciarSesion extends javax.swing.JFrame {
         txtNombres1.setForeground(new java.awt.Color(255, 255, 255));
         txtNombres1.setText("Contraseña");
 
+        txtPass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPassKeyPressed(evt);
+            }
+        });
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 255));
         jLabel1.setText("Forgot your password?");
@@ -85,6 +92,11 @@ public class IniciarSesion extends javax.swing.JFrame {
         btnLogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogInActionPerformed(evt);
+            }
+        });
+        btnLogIn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnLogInKeyPressed(evt);
             }
         });
 
@@ -188,6 +200,19 @@ public class IniciarSesion extends javax.swing.JFrame {
         
         user.iniciarSesion(txtCorreo.getText(), txtPass.getText());
     }//GEN-LAST:event_btnLogInActionPerformed
+
+    private void btnLogInKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLogInKeyPressed
+        
+        
+    }//GEN-LAST:event_btnLogInKeyPressed
+
+    private void txtPassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyPressed
+        
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        
+            user.iniciarSesion(txtCorreo.getText(), txtPass.getText());
+        }
+    }//GEN-LAST:event_txtPassKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogIn;

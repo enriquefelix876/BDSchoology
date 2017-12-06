@@ -5,10 +5,16 @@
  */
 package mx.itson.bdschoology.gui;
 
-import java.awt.List;
+//import java.awt.List;
+import java.util.List;
 import java.util.ArrayList;
-import mx.itson.bdschoology.entidades.TipoCuenta;
+import java.util.concurrent.ThreadLocalRandom;
+import mx.itson.bdschoology.entidades.Curso;
 import mx.itson.bdschoology.entidades.Usuario;
+import mx.itson.bdschoology.entidades.UsuarioCurso;
+import mx.itson.bdschoology.utils.HibernateUtil;
+import org.hibernate.Query;
+import org.hibernate.Session;
 
 /**
  *
@@ -24,8 +30,9 @@ public class Main {
         // TODO code application logic here
         
         Usuario user = new Usuario();
+        Curso c = new Curso();
+        UsuarioCurso uc = new UsuarioCurso();
         
-        user.obtenerTodos();
+    }
     }
     
-}

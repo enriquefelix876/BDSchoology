@@ -11,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.swing.JOptionPane;
 import mx.itson.bdschoology.gui.IniciarSesion;
-import static mx.itson.bdschoology.gui.IniciarSesion.sesiones;
 import mx.itson.bdschoology.gui.PrincipalEstudiante;
 import mx.itson.bdschoology.gui.PrincipalProfesor;
 import mx.itson.bdschoology.utils.HibernateUtil;
@@ -19,7 +18,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
-
+import static mx.itson.bdschoology.gui.IniciarSesion.sesiones;
 
 /**
  *
@@ -100,11 +99,23 @@ public class Usuario {
             Transaction transaction = sesion.beginTransaction();
             sesion.save(u);
             transaction.commit();
-            JOptionPane.showMessageDialog(null, "El Usuario se ha registrado con éxito");
         }catch(Exception e){
         
             System.out.println(e.getMessage());
         }
+    }
+    
+    public List<Usuario> obtenerUsuariosPorID(int id){
+ 
+        Session sesion = HibernateUtil.getSessionFactory().openSession();
+
+        Criteria cr = sesion.createCriteria(Usuario.class);
+        cr.add(Restrictions.eq("id", id));
+        List results = cr.list();
+        
+        List<Usuario>usuarios = results;
+        
+        return usuarios;
     }
     
     public void iniciarSesion(String correo, String pass){
@@ -119,15 +130,15 @@ public class Usuario {
         List results = cr.list();
         
         List<Usuario>usuarios = results;
-        String tipo = usuarios.get(0).getTipoCuenta();
         
-        
-        
+
         if (usuarios.isEmpty()) {
             
             JOptionPane.showMessageDialog(null, "Error al iniciar sesion");
+            
         }else{
-
+            
+        String tipo = usuarios.get(0).getTipoCuenta();
             if (tipo.equals("Profesor")) {
             
             user.setId(usuarios.get(0).getId());

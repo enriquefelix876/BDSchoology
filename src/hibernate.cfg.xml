@@ -18,11 +18,12 @@
       root
    </property>
    <property name="hibernate.connection.password">
-      raiz
+      
    </property>
    <mapping class="mx.itson.bdschoology.entidades.Usuario"/>
    <mapping class="mx.itson.bdschoology.entidades.Curso"/>
    <mapping class="mx.itson.bdschoology.entidades.UsuarioCurso"/>
-
+   <mapping class="mx.itson.bdschoology.entidades.Asignacion"/>
+   <mapping class="mx.itson.bdschoology.entidades.Entrega"/>
 </session-factory>
 </hibernate-configuration>

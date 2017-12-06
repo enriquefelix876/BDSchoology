@@ -5,6 +5,10 @@
  */
 package mx.itson.bdschoology.gui;
 
+import java.awt.event.ActionEvent;
+import javax.swing.JFileChooser;
+import mx.itson.bdschoology.entidades.Curso;
+
 /**
  *
  * @author enriq_000
@@ -13,11 +17,15 @@ public class Principal extends javax.swing.JFrame {
 
     /**
      * Creates new form Principal
-     */
+     */        
+    Curso c = new Curso();
+    
     public Principal() {
         initComponents();
         
         this.setLocationRelativeTo(null);
+        c.obtenerTodos();
+
     }
 
     /**
